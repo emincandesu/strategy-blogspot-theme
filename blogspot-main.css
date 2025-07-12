@@ -834,3 +834,86 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
   }
 } 
+
+/* === Blogspot Menü ve Blok Hizalama Düzeltmeleri === */
+.header-container,
+.main,
+.footer,
+.section,
+.container {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.navmenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu li {
+  position: relative;
+}
+
+.navmenu a {
+  color: var(--nav-color, #e3a127);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navmenu a:hover {
+  background: rgba(227, 161, 39, 0.1);
+}
+
+.navmenu .dropdown ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #1b262c;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.navmenu .dropdown:hover > ul {
+  display: block;
+}
+
+.navmenu .dropdown ul li {
+  display: block;
+  margin: 0;
+}
+
+.navmenu .dropdown ul a {
+  padding: 8px 16px;
+  display: block;
+}
+
+.main {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .header-container,
+  .main,
+  .footer,
+  .section,
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .navmenu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+} 
