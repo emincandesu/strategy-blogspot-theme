@@ -1152,3 +1152,140 @@ p, ul, ol {
   color: var(--accent-color, #e3a127);
   font-weight: 600;
 } 
+
+/* === Blogspot Modern Grid ve Kart Sistemi === */
+body {
+  background: #131e23;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
+  color: #e0e9f2;
+  font-family: var(--default-font, "Roboto", sans-serif);
+}
+
+/* Genel grid sistemi */
+.bsp-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.bsp-col-6 {
+  flex: 1 1 48%;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+.bsp-col-4 {
+  flex: 1 1 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+}
+.bsp-card {
+  background: #1b262c;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .bsp-row { flex-direction: column; gap: 16px; }
+  .bsp-col-6, .bsp-col-4 { min-width: 0; width: 100%; }
+}
+
+/* About bölümü için Blogspot uyumlu grid/kart */
+.about .row, .about .bsp-row { display: flex; flex-wrap: wrap; gap: 32px; }
+.about .col-lg-6, .about .bsp-col-6 { flex: 1 1 48%; min-width: 320px; }
+.about .about-image, .about .about-content {
+  background: #1b262c;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+}
+.about .about-image img {
+  width: 100%;
+  border-radius: 12px;
+}
+.about .experience-badge {
+  background: var(--accent-color, #e3a127);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+/* Services için Blogspot uyumlu grid/kart */
+.services .row, .services .bsp-row { display: flex; flex-wrap: wrap; gap: 32px; }
+.services .col-lg-4, .services .bsp-col-4 { flex: 1 1 30%; min-width: 260px; }
+.services .service-card {
+  background: #1b262c;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* Contact için Blogspot uyumlu grid/kart */
+.contact .row, .contact .bsp-row { display: flex; flex-wrap: wrap; gap: 32px; }
+.contact .col-lg-4, .contact .bsp-col-4, .contact .col-lg-6, .contact .bsp-col-6 {
+  flex: 1 1 30%;
+  min-width: 260px;
+}
+.contact .contact-info-box, .contact .contact-form-wrapper {
+  background: #1b262c;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+/* Footer için modern grid */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 24px auto;
+  padding: 0 16px;
+}
+.footer-about, .footer-links, .footer-contact {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 340px;
+}
+@media (max-width: 900px) {
+  .footer-top { flex-direction: column; gap: 16px; }
+  .footer-about, .footer-links, .footer-contact { max-width: 100%; }
+}
+
+/* Başlıklar ve metinler */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color, #e0e9f2);
+  font-family: var(--heading-font, 'Nunito Sans', sans-serif);
+  margin-top: 0;
+}
+h1 { font-size: 3rem; margin-bottom: 16px; }
+h2 { font-size: 2.2rem; margin-bottom: 12px; }
+h3 { font-size: 1.4rem; margin-bottom: 10px; }
+h4, h5, h6 { margin-bottom: 8px; }
+
+p, ul, ol {
+  color: var(--default-color, #e0e9f2);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  margin-bottom: 32px;
+  text-align: left;
+}
+.section-title h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.section-title .description-title {
+  color: var(--accent-color, #e3a127);
+  font-weight: 600;
+} 
