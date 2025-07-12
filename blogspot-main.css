@@ -1616,3 +1616,107 @@ p, ul, ol {
   color: #fff;
   transform: translateY(-2px);
 } 
+
+/* === Header ve Dropdown Menü Düzeltmeleri === */
+.header .header-container {
+  position: relative;
+  z-index: 100;
+}
+
+.header .navmenu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .navmenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header .navmenu li {
+  position: relative;
+}
+
+.header .navmenu .dropdown > ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 180px;
+  background: #232b36;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  padding: 10px 0;
+  z-index: 200;
+  flex-direction: column;
+  gap: 0;
+}
+
+.header .navmenu .dropdown:hover > ul,
+.header .navmenu .dropdown:focus-within > ul {
+  display: block;
+}
+
+.header .navmenu .dropdown ul li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.header .navmenu .dropdown ul a {
+  display: block;
+  padding: 10px 24px;
+  color: var(--nav-color);
+  background: none;
+  border-radius: 0;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.header .navmenu .dropdown ul a:hover {
+  background: rgba(227,161,39,0.08);
+  color: var(--nav-hover-color);
+}
+
+.header .navmenu .dropdown .dropdown > ul {
+  left: 100%;
+  top: 0;
+  margin-left: 2px;
+}
+
+.header .navmenu .dropdown .dropdown > a:after {
+  content: '\F285';
+  font-family: 'bootstrap-icons';
+  font-size: 1em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.header .navmenu .dropdown > a .bi-chevron-down {
+  margin-left: 6px;
+  font-size: 1em;
+}
+
+@media (max-width: 991px) {
+  .header .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .header .navmenu ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .header .navmenu {
+    width: 100%;
+    justify-content: flex-start;
+  }
+} 
