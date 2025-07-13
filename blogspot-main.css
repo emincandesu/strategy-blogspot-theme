@@ -1419,3 +1419,46 @@ a:hover {
   margin-top: 6px;
   font-size: 13px;
 } 
+
+/* === BLOGSPOT HEADER & FOOTER CONTAINER DÜZELTMELERİ === */
+.header .header-container,
+.footer .footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .header .header-container,
+  .footer .footer-top {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Logo ve menü hizalaması için Blogspot'a özel düzeltme */
+.header .logo {
+  display: flex;
+  align-items: center;
+  min-width: 160px;
+}
+.header .logo h1, .header .logo img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Footer bloklarının responsive yan yana durması için */
+.footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+@media (max-width: 900px) {
+  .footer .footer-top {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+} 
