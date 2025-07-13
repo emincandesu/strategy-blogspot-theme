@@ -397,110 +397,103 @@ a:hover {
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+/* === SERVICES GRID & CARD: STRATEGY'DEN === */
 .services .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  margin-left: -12px;
+  margin-right: -12px;
 }
-
 .services .col-lg-4 {
-  flex: 1 1 30%;
-  min-width: 280px;
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
 }
-
+@media (max-width: 991px) {
+  .services .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
 .services .service-card {
-  background: var(--surface-bg);
-  border-radius: var(--card-radius);
-  padding: 32px 24px;
-  text-align: center;
-  transition: all 0.3s ease;
-  height: 100%;
   position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  padding: 40px 40px 40px 40px;
+  margin-bottom: 30px;
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  background: var(--surface-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
-
-.services .service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.services .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-md);
-}
-
-.services .service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.services .service-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--accent);
-  border-radius: 50%;
-  display: flex;
+.services .service-card .service-icon {
+  margin-bottom: 25px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
+  border-radius: 10px;
+  width: 64px;
+  height: 64px;
+}
+.services .service-card .service-icon i {
+  font-size: 32px;
+  color: var(--accent-color);
   transition: all 0.3s ease;
 }
-
-.services .service-icon i {
-  font-size: 2rem;
-  color: #fff;
-}
-
 .services .service-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-  color: var(--text-primary);
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
-
 .services .service-card h3 a {
-  color: var(--text-primary);
-  text-decoration: none;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
-
 .services .service-card h3 a span {
-  color: var(--accent);
+  display: block;
 }
-
+.services .service-card h3 a:hover {
+  color: var(--accent-color);
+}
 .services .service-card p {
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+  color: var(--default-color);
+  transition: color 0.3s ease;
+  margin-bottom: 0;
 }
-
-.services .card-action {
-  margin-top: auto;
+.services .service-card:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 }
-
-.services .card-action a {
-  color: var(--accent);
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
+.services .service-card:hover h3 a {
+  color: var(--accent-color);
 }
-
-.services .card-action a:hover {
-  transform: translateX(4px);
+.services .service-card:hover p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
-
-@media (max-width: 991px) {
+.services .service-card:hover .service-icon i {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .services .service-card {
+    padding: 150px 25px 25px;
+  }
+  .services .service-card h3 {
+    font-size: 24px;
+  }
+  .services .service-card .service-icon {
+    position: absolute;
+    top: 40px;
+    left: 25px;
+  }
   .services .row {
     flex-direction: column;
-    gap: 24px;
+    margin-left: 0;
+    margin-right: 0;
   }
-  
   .services .col-lg-4 {
-    flex: 1 1 100%;
-    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
